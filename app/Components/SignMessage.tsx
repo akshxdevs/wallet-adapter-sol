@@ -1,3 +1,4 @@
+"use client";
 import { ed25519 } from "@noble/curves/ed25519";
 import { useWallet } from "@solana/wallet-adapter-react";
 import bs58 from "bs58";
@@ -47,11 +48,11 @@ export function SignMessage() {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Message to sign"
-        className="px-4 py-2 border rounded-md w-full max-w-md text-black"
+        className="px-4 py-2 border rounded-md w-full max-w-md bg-[#181818] text-[#999999] border-gray-700"
       />
       <button
         onClick={handleSign}
-        className="px-6 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+        className="px-6 py-2 w-full rounded-md bg-[#ab9ff2] hover:bg-[#e2dffe] text-[#1f1f1f]"
       >
         Sign Message
       </button>

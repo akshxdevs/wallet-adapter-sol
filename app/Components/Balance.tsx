@@ -1,20 +1,19 @@
+"use client";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useEffect, useState } from "react";
 
-export function ShowSolBalance() {
+export const ShowSolBalance = ()=> {
   const { connection } = useConnection();
   const { publicKey } = useWallet();
-  const [balance, setBalance] = useState<number | null>(null);
-
+  const [balance, setBalance] = useState<number|null>(null);
+  const fetchBalance = async () => {
+    if (publicKey) {
+      const lamports = await connection.getBalance(publicKey);
+      setBalance(lamports / LAMPORTS_PER_SOL);
+    }
+  };
   useEffect(() => {
-    const fetchBalance = async () => {
-      if (publicKey) {
-        const lamports = await connection.getBalance(publicKey);
-        setBalance(lamports / LAMPORTS_PER_SOL);
-      }
-    };
-
     fetchBalance();
   }, [publicKey, connection]);
 
@@ -29,4 +28,6 @@ export function ShowSolBalance() {
       </div>
     </div>
   );
-}
+};
+
+ShowSolBalance.displayName = "showSolBalance";

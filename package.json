@@ -17,7 +17,8 @@
     "@solana/web3.js": "^1.98.2",
     "next": "14.2.29",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@types/node": "^20",

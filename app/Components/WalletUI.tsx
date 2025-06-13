@@ -1,10 +1,7 @@
+"use client";
 import { WalletDisconnectButton, WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { RequestAirdrop } from "./Airdrop";
-import { SendTokens } from "./SendSol";
 import { ShowSolBalance } from "./Balance";
-import { SignMessage } from "./SignMessage";
 import { useWallet } from "@solana/wallet-adapter-react";
-import { Navbar } from "./Navbar";
 import { OptionStack } from "./OptionStack";
 import { BottomNavbar } from "./BottomNavbar";
 
@@ -36,7 +33,7 @@ export const WalletUI = () => {
                   </div>
                 </div>
                 <div className="pt-20">
-                  <ShowSolBalance />
+                  <ShowSolBalance/>
                 </div>
                 <OptionStack/>
                 <div className="bg-[#2a2a2a] rounded-2xl">
@@ -59,9 +56,3 @@ export const WalletUI = () => {
     </div>
   );
 }
-        {/* 
-        <WalletDisconnectButton />
-      </div>
-      <RequestAirdrop />
-      
-      <SignMessage /> */}
